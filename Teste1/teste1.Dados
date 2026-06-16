@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace teste1
+{
+    class teste1
+    {
+    public class ChamadosDataAccess
+    {
+        // ⭐️ Boa Prática: Mover Connection String para um local centralizado.
+        // Em um projeto real, isto viria do App.config.
+        private const string ConnectionString = @"Data Source=DESKTOP-2GBAOHH; Initial Catalog=DesktopNRCdesk;Integrated Security=True;";
+
+        // Método principal para obter tickets, implementando a lógica de perfis.
+        public DataTable ObterChamadosPorPerfil()
+        {
+            string sqlQuery;
+            int? idParam = null; // Parâmetro para ID, nulo por padrão
+
+            // Lógica de visualização baseada no perfil do usuário
+            if (UsuarioSessao.IsAdmin)
+            {
+                // Administrador: Vê TUDO
+                sqlQuery = "SELECT * FROM Chamados";
+            }
+            else if (UsuarioSessao.IsTecnico)
+            {
+                // Técnico: Vê apenas os tickets atribuídos a ele (ID_Tecnico_Responsavel)
+                sqlQuery = "SELECT * FROM Chamados WHERE ID_Tecnico_Responsavel = @UserId";
+                idParam = UsuarioSessao.IdUsuarioLogado;
+            }
+            else // Usuário Comum
+            {
+                // Usuário Comum: Vê apenas os tickets que ele solicitou (ID_Usuario_Solicitante)
+                sqlQuery = "SELECT * FROM Chamados WHERE ID_Usuario_Solicitante = @UserId";
+                idParam = UsuarioSessao.IdUsuarioLogado;
+            }
+
+            // Execução da Query
+            using (SqlConnection cn = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, cn))
+                {
+                    // Se houver um ID necessário para o filtro (Técnico ou Comum), adiciona o parâmetro.
+                    if (idParam.HasValue)
+                    {
+                        cmd.Parameters.AddWithValue("@UserId", idParam.Value);
+                    }
+                    
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+    }
+}
+

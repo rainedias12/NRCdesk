@@ -1,0 +1,15 @@
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\bin\Debug\Teste1.exe.config
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\bin\Debug\Teste1.exe
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\bin\Debug\Teste1.pdb
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.csproj.AssemblyReference.cache
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.cadastrar.resources
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.entrar.resources
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.Properties.Resources.resources
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.csproj.GenerateResource.cache
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.csproj.CoreCompileInputs.cache
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.exe
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.pdb
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.enviar_ticket.resources
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.tabstatus.resources
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.exe.config
+C:\Users\Dell Latitude E5470\source\repos\Teste1\Teste1\obj\Debug\Teste1.relatorio.resources

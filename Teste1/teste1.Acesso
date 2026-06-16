@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace teste2
+{
+    class teste2
+    {
+    public static class UsuarioSessao
+    {
+        // Variável de exemplo para o ID do usuário logado.
+        // ID 5 = Isabela Fernandes (Administrador) - Padrão de Teste.
+        public static int IdUsuarioLogado { get; private set; } = 5; 
+
+        // Variável de exemplo para o Nome do Perfil.
+        // Usamos o nome para facilitar a leitura da regra de negócio.
+        // Perfis disponíveis: "Administrador", "Técnico", "Usuário Comum"
+        public static string NomePerfil { get; private set; } = "Administrador"; 
+
+        // Método que seria chamado após a tela de Login
+        public static void DefinirUsuarioLogado(int idUsuario, string nomePerfil)
+        {
+            IdUsuarioLogado = idUsuario;
+            NomePerfil = nomePerfil;
+        }
+        
+        // Métodos auxiliares para verificação de perfil
+        public static bool IsAdmin => NomePerfil == "Administrador";
+        public static bool IsTecnico => NomePerfil == "Técnico";
+        public static bool IsUsuarioComum => NomePerfil == "Usuário Comum";
+    }
+    }
+}
+
+    
